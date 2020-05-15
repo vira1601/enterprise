@@ -21,9 +21,27 @@ describe('User Logout', () => {
         .click()
     })
 
+    it('User success Login and Dashboard screen will displayed', () =>{
+        cy.wait(10000)
+        cy.url()
+        .should('eq','http://devel.ekrut.com/employer/dashboard')
+    })
+
+
     it('User click arrow menu to Logout', () =>{
-        cy.get('.anticon > svg')
+        cy.get('.eds-navheader-dropdown__button')
         .should('be.visible')
         .click()
+        .wait(10000)
     })
+
+
+    it('User Clicks Sign Out Button', () => {
+        cy.get('[link="/logout"] > a')
+        .wait(10000)
+        .should('be.visible')
+        .click()
+        
+    })
+    
 })

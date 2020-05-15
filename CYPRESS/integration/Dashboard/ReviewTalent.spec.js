@@ -109,14 +109,17 @@ describe('User open Review Talent in Dashboard screen', () => {
     
     it('User input reason', () => {    
         cy.get(':nth-child(15) > .form-control')
-        .should('be.visible')
+        .scrollIntoView()
+        .click()
         .type(randomtext)
     })
     
     it('User click SUBMIT button', () => {
         cy.get('.ml-4')
         .should('be.visible')
+        .scrollIntoView()
         .click()
+        
     })
     
 
