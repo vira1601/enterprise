@@ -40,7 +40,7 @@ describe('User Login', () => {
     it('User Input Valid Phone Number', () => {
         cy.get('#phone')
         .should('be.visible')
-        .type('08930000002')
+        .type('089300000022')
     })
 
     it('User Input Company Name', () => {
