@@ -1,4 +1,4 @@
-describe('User Login', () => {
+describe('User Register', () => {
     it('User Visits Ekrut Platform', () => {
     cy.visit('http://stg.ekrut.com/login')
     })
