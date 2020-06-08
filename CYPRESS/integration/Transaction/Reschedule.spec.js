@@ -42,22 +42,22 @@ describe('User Set Reschedule Interview', () => {
     })
 
     it('User Select Talent and click Action button', () => {
-        cy.get(':nth-child(2) > .emp-role-talent__footer > .ant-row-space-between > .ant-col-sm-14 > .ant-row > :nth-child(4) > .sc-kGXeez > .btn')
-        .click()
+        cy.get('.btn').click()
     })
 
     it('User click Reschedule', () => {
         cy.get('.emp-cta-7')
         .click()
+        .wait(4000)
     })
 
     it('User select Interview Schedule', () => {
-        //User click datefield
-        cy.get(':nth-child(2) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .form-control').click()                                                        
-        //User select schedule date
-        cy.get(':nth-child(2) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .rdtPicker > .rdtDays > table > tbody > :nth-child(3) > [data-value="15"]')
-        .click()
-        //user click time field
+      //User click datefield
+      cy.get(':nth-child(2) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .form-control').click()
+      //User select schedule date
+      cy.get(':nth-child(2) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .rdtPicker > .rdtDays > table > tbody > :nth-child(2) > [data-value="10"]').click()
+     
+       //user click time field
         cy.get(':nth-child(2) > .c-input-group-time > .form-group > .css-1pcexqc-container > .css-1fr6j5e-control > .css-1hwfws3').click()
         //user select schedule time
         cy.get('#react-select-7-option-4').click()
@@ -65,11 +65,17 @@ describe('User Set Reschedule Interview', () => {
 
     it('User select Interview Schedule 1', () => {
         //User click datefield
-        cy.get(':nth-child(3) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .form-control').click()
+        cy.get(':nth-child(3) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .form-control')
+        .scrollIntoView()
+        .click()
+        
         //User select schedule date
-        cy.get(':nth-child(3) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .rdtPicker > .rdtDays > table > tbody > :nth-child(2) > [data-value="10"]').click()
+        cy.get(':nth-child(3) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .rdtPicker > .rdtDays > table > tbody > :nth-child(2) > [data-value="10"]')
+        .click()
+
         //user click time field
-        cy.get(':nth-child(3) > .c-input-group-time > .form-group > .css-1pcexqc-container > .css-1fr6j5e-control > .css-1hwfws3').click()
+        cy.get(':nth-child(3) > .c-input-group-time > .form-group > .css-1pcexqc-container > .css-1fr6j5e-control > .css-1hwfws3')
+        .click()
         //user select schedule time
         cy.get('#react-select-8-option-2').click()
     })
