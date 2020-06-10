@@ -4,7 +4,7 @@ describe('User Set Interview Offline', () => {
     })
 
     it('User Inputs Email',() => {
-        cy.wait(1000)
+        cy.wait(10000)
         cy.get(':nth-child(1) > .ant-input')
         .should('be.visible')
         .type('eka@xurya.com')
@@ -20,7 +20,7 @@ describe('User Set Interview Offline', () => {
         cy.get('.content__body > .ant-btn-primary')
         .should('be.visible')
         .click()
-        .wait(4000)
+        .wait(6000)
     })
     it('User Clicks Role Menu', () => {
         cy.get('.ant-menu > :nth-child(4)')
@@ -80,7 +80,7 @@ describe('User Set Interview Offline', () => {
         cy.get(':nth-child(3) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .form-control').click()
         //User select schedule date
         cy.get(':nth-child(3) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .rdtPicker > .rdtDays > table > tbody > :nth-child(3) > [data-value="16"]')
-        .scrollIntoView()
+        // .scrollIntoView()
         .click()
         //user click time field
         cy.get(':nth-child(3) > .c-input-group-time > .form-group > .css-1pcexqc-container > .css-1fr6j5e-control > .css-1hwfws3').click()
@@ -94,6 +94,40 @@ describe('User Set Interview Offline', () => {
     })
     //Add new location
     it('User Input New Location', () => {
-    cy.get('.ant-row-end > .ant-btn').click()
+        cy.get('.ant-row-end > .ant-btn').click()
+        //Input Venue name
+        cy.get(':nth-child(1) > .eds-input-group > .ant-input')
+        .should('be.visible')
+        .type('automation vr')
+        
+        //input address
+        cy.get(':nth-child(2) > :nth-child(2) > .eds-input-group > .ant-input')
+        .should('be.visible')
+        .type('automation address')
+        //checklist use as default address
+        cy.get('.ant-checkbox-group-item > :nth-child(2)').click()
+        
+        //user click save button
+        cy.get(':nth-child(2) > .ant-col-24 > .ant-row > :nth-child(2) > .ant-btn').click()
+         // user click cancel button
+        // cy.get(':nth-child(2) > .ant-col-24 > .ant-row > :nth-child(1) > .ant-btn').click()
     })
+
+    it('User Input Important Notes', () => {
+        cy.get(':nth-child(10) > .ant-input')
+        .type('Automation Notes')
+    })
+
+    it(' Input User', () => {
+        cy.get(':nth-child(11) > .ant-input')
+        .type('Automation Notes')
+    })
+
+    it('Click Yes Button', () => {
+        cy.get('.ml-4').click()
+    })
+
+    // it('Click No Button', () => {
+    //     cy.get('.c-button--ghost')
+    // })
 })
