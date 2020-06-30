@@ -82,9 +82,47 @@ describe('Find Talent List - Filter', () => {
     it('User filter list by Maximum Budget',() => {
         cy.get('.ant-input')
         .click()
-        .type('5000000')
+        .type('15000000')
         .wait(3000)
     })
-    
+    it('User filter list by Talents Preferred level',() => {
+        cy.get(':nth-child(3) > .eds-input-group > .css-1pcexqc-container > .css-bg1rzq-control')
+        .click()
 
+        cy.get('#react-select-4-option-2')
+        .click()
+    })
+    // it('User filter list by Talents Preferred Location - Anywhere in Jakarta',() => {
+    //     cy.get(':nth-child(2) > .ant-checkbox > .ant-checkbox-input')
+    //     .click()
+    //     cy.get(':nth-child(3) > .ant-checkbox > .ant-checkbox-input')
+    //     .click()
+    //     cy.get(':nth-child(4) > .ant-checkbox > .ant-checkbox-input')
+    //     .click()
+    //     cy.get(':nth-child(5) > .ant-checkbox > .ant-checkbox-input')
+    //     .click()
+    //     cy.get(':nth-child(6) > .ant-checkbox > .ant-checkbox-input')
+    //     .click()
+    //     cy.get(':nth-child(7) > .ant-checkbox > .ant-checkbox-input')
+    //     .click()
+    // })
+    it('User filter list by Industry',() => {
+        cy.get(':nth-child(5) > .eds-input-group > .css-1pcexqc-container > .css-bg1rzq-control')   
+        .click()
+        .type('Information Technology')
+        .wait(1000)
+        cy.get('#react-select-5-option-28').click()
+    })
+    it('User filter list by Min Degree',() => {
+        cy.get(':nth-child(6) > .eds-input-group > .css-1pcexqc-container > .css-bg1rzq-control')       
+        .click()
+        cy.get('#react-select-6-option-0')
+        .click()
+    })
+    
+    it('User filter list by Gender',() => {
+        cy.get(':nth-child(3) > .ant-radio > .ant-radio-input')      
+        .click()
+    
+    })
 })
