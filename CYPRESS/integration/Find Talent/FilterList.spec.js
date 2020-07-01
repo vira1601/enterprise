@@ -123,6 +123,11 @@ describe('Find Talent List - Filter', () => {
     it('User filter list by Gender',() => {
         cy.get(':nth-child(3) > .ant-radio > .ant-radio-input')      
         .click()
-    
+    })
+
+        //ResetFilter
+    it('User Reset Filter',() => {
+         cy.get('.ant-col-xs-0 > .ant-btn')   
+         .click()
     })
 })

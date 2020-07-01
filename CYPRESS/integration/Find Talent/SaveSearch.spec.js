@@ -1,4 +1,4 @@
-describe('Find Talent List', () => {
+describe('Find Talent - Saved Search', () => {
     it('User Visits Ekrut Platform', () => {
     cy.visit('http://devel.ekrut.com/login')
     })
@@ -67,29 +67,10 @@ describe('Find Talent List', () => {
         .click()
         .wait(2000)
     })
-    
-    it('User verify list of talent appearance',() => {
-        cy.get('.ant-col-sm-16 > .djtHnC')
-        cy.contains('recommended talents found')
-    })
-    
-    it('User select talent and click Bookmarked icon', () => {
-        cy.get(':nth-child(1) > .ant-card > .ant-card-body > .talent-card__bookmark > .card-talent-square__bookmarked > #Path_3')
+    it('User click Saved Search button', () => {
+        cy.get('.ant-btn > u')
+        .scrollIntoView()
         .click()
+        .wait(2000)
     })
-    
-    // it('Success bookmarked will be displayed',() => {
-    //     cy.get('.c-toast__text-body')
-    //     cy.contains('Employer bookmarked assigned')
-    // })
-    
-    it('User click list of talent to view profile',() => {
-        cy.get(':nth-child(1) > .ant-card > .ant-card-body > a > .talent-card__body')
-        .click()
-    })
-
-    // it('User click Next Page',() => {
-    //     cy.get('.ant-spin-container > .text-center > .ant-pagination > .ant-pagination-item-2')    
-    //     .click()
-    // })
 })
