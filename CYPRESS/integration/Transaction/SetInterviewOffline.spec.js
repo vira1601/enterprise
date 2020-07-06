@@ -29,7 +29,7 @@ describe('User Set Interview Offline', () => {
     })
 
     it('User select roles', () => {
-        cy.get('[href="/employer/roles/8876"] > .emp-myrole-v2__card__container')
+        cy.get('[href="/employer/roles/9810"] > .emp-myrole-v2__card__container')
         .scrollIntoView()
         .click()
     })
@@ -41,7 +41,7 @@ describe('User Set Interview Offline', () => {
     })
 
     it('User Select Talent and click Action button', () => {
-        cy.get(':nth-child(2) > .emp-role-talent__footer > .ant-row-space-between > .emp-role-talent__list-button > .ant-row > .w-sm-100 > .sc-dxgOiQ > .btn')
+        cy.get(':nth-child(3) > .emp-role-talent__footer > .ant-row-space-between > .emp-role-talent__list-button > .ant-row > .w-sm-100 > .sc-kEYyzF > .btn')
         .click()
     })
 
@@ -75,13 +75,18 @@ describe('User Set Interview Offline', () => {
     })
 
     
+    
     it('User select Interview Schedule 1', () => {
-        //User click datefield
-        cy.get(':nth-child(3) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .form-control').click()
-        //User select schedule date
-        cy.get(':nth-child(3) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .rdtPicker > .rdtDays > table > tbody > :nth-child(3) > [data-value="16"]')
-        // .scrollIntoView()
+        
+        cy.get(':nth-child(3) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .form-control')
         .click()
+        cy.get(':nth-child(3) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .rdtPicker > .rdtDays > table > tbody > :nth-child(3) > [data-value="15"]')
+        .click()
+        //User select schedule date
+        
+        // cy.get(':nth-child(3) > .c-input-group-datepicker > .c-input-group-datepicker__cont > .rdt > .rdtPicker > .rdtDays > table > tbody > :nth-child(3) > [data-value="20"]')
+        // .scrollIntoView()
+        // .click()
         //user click time field
         cy.get(':nth-child(3) > .c-input-group-time > .form-group > .css-1pcexqc-container > .css-1fr6j5e-control > .css-1hwfws3').click()
         //user select schedule time
